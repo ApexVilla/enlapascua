@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo-new.png";
+import { VisitCounter } from "./VisitCounter";
 
 const Footer = () => {
   return (
@@ -8,14 +10,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
-                <span className="font-display font-bold text-accent-foreground text-lg">D</span>
-              </div>
-              <span className="font-display font-bold text-xl">
-                Directorio<span className="text-accent">Local</span>
-              </span>
-            </div>
+            <Link to="/" className="inline-block mb-4">
+              <img src={logo} alt="EnLaPascua.com" className="h-12 w-auto object-contain brightness-0 invert" />
+            </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Tu guía comercial definitiva. Encuentra los mejores negocios y servicios de tu ciudad.
             </p>
@@ -53,13 +50,13 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-primary-foreground/50">Contacto</h4>
             <ul className="space-y-2.5">
               <li className="flex items-center gap-2 text-sm text-primary-foreground/70">
-                <Mail className="w-4 h-4 text-accent" /> info@directoriolocal.com
+                <Mail className="w-4 h-4 text-accent" /> info@enlapascua.com
               </li>
               <li className="flex items-center gap-2 text-sm text-primary-foreground/70">
-                <Phone className="w-4 h-4 text-accent" /> +52 555 000 0000
+                <Phone className="w-4 h-4 text-accent" /> +58 412 000 0000
               </li>
               <li className="flex items-center gap-2 text-sm text-primary-foreground/70">
-                <MapPin className="w-4 h-4 text-accent" /> Ciudad, País
+                <MapPin className="w-4 h-4 text-accent" /> Valle de la Pascua, Guárico
               </li>
             </ul>
             <div className="flex gap-3 mt-4">
@@ -72,10 +69,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-6 text-center">
-          <p className="text-xs text-primary-foreground/40">
-            © 2026 DirectorioLocal. Todos los derechos reservados.
+        <div className="border-t border-primary-foreground/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-primary-foreground/40 text-center md:text-left">
+            © 2026 EnLaPascua.com. Todos los derechos reservados.
           </p>
+          <VisitCounter />
         </div>
       </div>
     </footer>
